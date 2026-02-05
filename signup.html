@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup</title>
+
+<style>
+*{box-sizing:border-box;font-family:Arial;}
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+}
+
+.card{
+  width:340px;
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  animation:fade .6s ease;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:translateY(-20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h2{text-align:center;}
+
+input{
+  width:100%;
+  padding:11px;
+  margin:10px 0;
+  border-radius:6px;
+  border:1px solid #ccc;
+  transition:.3s;
+}
+
+input:focus{
+  border-color:#ff758c;
+  box-shadow:0 0 6px rgba(255,117,140,.4);
+  outline:none;
+}
+
+button{
+  width:100%;
+  padding:11px;
+  background:#ff758c;
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{background:#ff5f7a; transform:translateY(-2px);}
+
+.hint{
+  font-size:12px;
+  margin-top:-5px;
+}
+
+.error{color:red;font-size:13px;}
+.success{color:green;text-align:center;margin-top:10px;}
+.link{text-align:center;margin-top:10px;}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Signup</h2>
+
+<form onsubmit="return signupCheck()">
+<input type="text" id="name" placeholder="Username">
+<div id="nameErr" class="error"></div>
+
+<input type="email" id="email" placeholder="Email">
+<div id="emailErr" class="error"></div>
+
+<input type="password" id="password" placeholder="Password" onkeyup="checkPassword()">
+
+<div class="hint" id="hint">
+Must contain: 6+ characters & 1 numeric digit
+</div>
+
+<div id="passErr" class="error"></div>
+
+<button>Signup</button>
+</form>
+
+<div id="msg" class="success"></div>
+
+<div class="link">
+<a href="login.html">Back to login</a>
+</div>
+</div>
+
+<script>
+function checkPassword(){
+  let p=document.getElementById("password").value;
+  let hint=document.getElementById("hint");
+
+  if(p.length>=6 && /\d/.test(p)){
+    hint.style.color="green";
+    hint.innerText="✔ Strong password";
+  }else{
+    hint.style.color="red";
+    hint.innerText="Must contain: 6+ characters & 1 numeric digit";
+  }
+}
+
+function signupCheck(){
+  let n=document.getElementById("name").value;
+  let e=document.getElementById("email").value;
+  let p=document.getElementById("password").value;
+  let ok=true;
+
+  document.getElementById("nameErr").innerText="";
+  document.getElementById("emailErr").innerText="";
+  document.getElementById("passErr").innerText="";
+  document.getElementById("msg").innerText="";
+
+  if(n===""){
+    document.getElementById("nameErr").innerText="Username required";
+    ok=false;
+  }
+
+  if(!e.includes("@")){
+    document.getElementById("emailErr").innerText="Valid email required";
+    ok=false;
+  }
+
+  if(!(p.length>=6 && /\d/.test(p))){
+    document.getElementById("passErr").innerText="Password must contain 6+ chars & number";
+    ok=false;
+  }
+
+  if(ok){
+    document.getElementById("msg").innerText="✔ Form submitted successfully";
+  }
+  return false;
+}
+</script>
+
+</body>
+</html>
