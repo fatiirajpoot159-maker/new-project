@@ -1,6 +1,6 @@
 /* Reset */
 *{
-  box-sizing:border-box;
+  Box-sizing:Border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -10,16 +10,16 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,#667eea,#764ba2);
+  Background:linear-gradient(135deg,#667eea,#764ba2);
 }
 
 /* Card */
 .card{
   width:350px;
-  background:#fff;
+  Background:#fff;
   padding:30px;
-  border-radius:14px;
-  box-shadow:0 12px 35px rgba(0,0,0,.2);
+  Border-radius:14px;
+  Box-shadow:0 12px 35px rgba(0,0,0,.2);
   animation:fade .6s ease;
 }
 
@@ -40,15 +40,15 @@ input{
   width:100%;
   padding:12px;
   margin:10px 0;
-  border-radius:8px;
-  border:1px solid #ccc;
+  Border-radius:8px;
+  Border:1px solid #ccc;
   transition:.3s;
   font-size:14px;
 }
 
 input:focus{
-  border-color:#667eea;
-  box-shadow:0 0 6px rgba(102,126,234,.4);
+  Border-color:#667eea;
+  Box-shadow:0 0 6px rgba(102,126,234,.4);
   outline:none;
 }
 
@@ -56,9 +56,9 @@ input:focus{
 button{
   width:100%;
   padding:12px;
-  border:none;
-  border-radius:8px;
-  background:linear-gradient(135deg,#667eea,#5a67d8);
+  Border:none;
+  Border-radius:8px;
+  Background:linear-gradient(135deg,#667eea,#5a67d8);
   color:white;
   font-weight:600;
   cursor:pointer;
@@ -67,7 +67,7 @@ button{
 
 button:hover{
   transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(0,0,0,.2);
+  Box-shadow:0 6px 18px rgba(0,0,0,.2);
 }
 
 /* Error */
@@ -79,7 +79,7 @@ button:hover{
 /* Success */
 .success{
   color:green;
-  text-align:center;
+  Text-align:center;
   margin-top:10px;
   font-size:14px;
 }
@@ -92,24 +92,27 @@ button:hover{
 
 /* Link */
 .link{
-  text-align:center;
+  Text-align:center;
   margin-top:12px;
 }
 
 .link a{
-  color:#667eea;
-  text-decoration:none;
+  COLOR:#667eea;
+  Text-decoration:none;
   font-weight:600;
 }
 
 .link a:hover{
-  text-decoration:underline;
+  Text-decoration:underline;
 }
 
 /* Responsive */
 @media(max-width:420px){
   .card{
-    width:90%;
+    Width:90%;
     padding:22px;
   }
+}
+button{
+  color: aqua;
 }
